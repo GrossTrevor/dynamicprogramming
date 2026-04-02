@@ -3,7 +3,7 @@ import datetime
 import matplotlib.pyplot as plt
 
 def main():
-    run_tests = True
+    run_tests = False
 
     K, vals, A, B = parse('data/example.in')
     max_value, lcs = hvlcs.hvlcs(K, vals, A, B)
