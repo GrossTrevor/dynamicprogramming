@@ -48,7 +48,7 @@ Output data will be placed in `data/output.out` and formatted as follows:
 
 ## Running the Algorithms
 * Create input based on instructions above
-* Run the following command from the `greedyalgorithms/` directory: `python src/main.py`
+* Run the following command from the `dynamicprogramming/` directory: `python src/main.py`
 * Examine the output in the `data/output.out` file
 
 ## Written Component
