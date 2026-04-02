@@ -21,5 +21,25 @@ One optimal common subsequence that achieves this value, on the next line.
 """
 
 def hvlcs(K, vals, A, B):
+    # Base case
+    if K == 0 or A == '' or B == '':
+        return 0, ''
+    
+    # Initilizations
+    vals_dict = dict(vals)
+    m = len(A)
+    n = len(B)
+    M = [[0] * (n + 1) for _ in range(m + 1)]
 
-    return 0
+    # Memoization
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if A[i-1] == B[j-1]:
+                M[i][j] = M[i-1][j-1] + vals_dict[A[i-1]]
+            else:
+                M[i][j] = max(M[i-1][j], M[i][j-1])
+
+    # Backtracking
+    lcs = ''
+
+    return M[m][n], lcs

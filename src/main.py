@@ -1,8 +1,22 @@
 import hvlcs
 
 def main():
-    
+    K, vals, A, B = parse('data/example.in')
+    max_value, lcs = hvlcs.hvlcs(K, vals, A, B)
+    with open('data/output.out', 'w') as file:
+        file.write(f'{max_value}\n{lcs}')
     return 0
+
+def parse(file_path):
+    with open(file_path, 'r') as f:
+        K = int(f.readline().strip())
+        vals = []
+        for _ in range(K):
+            line = f.readline().strip().split()
+            vals.append((line[0], int(line[1])))
+        A = f.readline().strip()
+        B = f.readline().strip()
+    return K, vals, A, B
 
 if __name__ == '__main__':
     main()
