@@ -31,7 +31,6 @@ l2 v2
 l3 v3
 A
 B
-
 ```
 Where:
 * `k` = number of alphabetical value pairings (`k >= 1`)
@@ -60,22 +59,22 @@ Output data will be placed in `data/output.out` and formatted as follows:
 
 Recurrence Equation:
 
-Case 1  - A[i] == B[j]:
+$\text{Case 1}  - A[i] == B[j]$:
 
-Value[A[i]] + OPT(i-1,j-1)
+$\text{Value}[A[i]] + \text{OPT}(i-1,j-1)$
 
-Case 2 - A[i] != B[j]:
+$\text{Case 2} - A[i] != B[j]:$
 
-max(OPT(i-1,j), OPT(i,j-1))
+$\max(OPT(i-1,j), \text{OPT}(i,j-1))$
 
 Base Cases:
 
-OPT(i, 0) = 0, OPT(0,j) = 0
+$\text{OPT}(i, 0) = 0, \text{OPT}(0,j) = 0$
 
 
 Correctness:
 
-This recurrence equation is correct because it considers both cases optimally, if A[i] == B[j] and these values are not appended to the optimal solution, we could append this matched character, and with the assumption that Val[A[i]] > 0, this would only increase the sum of the substring, contradicting the optimal solution. If A[i] != B[j], then we do not use at least one of these characters, meaning the best we can do is either OPT(i,j-1) or OPT(i-1,j) and our recurrence equation takes the one with a larger value assuring the best possible outcome.
+This recurrence equation is correct because it considers both cases optimally, if $A[i] == B[j]$ and these values are not appended to the optimal solution, we could append this matched character, and with the assumption that $\text{Value}[A[i]] > 0$, this would only increase the sum of the substring, contradicting the optimal solution. If $A[i] != B[j]$, then we do not use at least one of these characters, meaning the best we can do is either $\text{OPT}(i,j-1)$ or $\text{OPT}(i-1,j)$, and our recurrence equation takes the one with a larger value, assuring the best possible outcome.
 
 
 
@@ -89,7 +88,7 @@ function HVLCS_length(A, B)
     
     m = length(A)
     n = length(B)
-    M is an (m x n) 2D array, with all entr
+    M is an (m x n) 2D array, with all entries set to 0
 
 
     for i = 1 to m + 1
