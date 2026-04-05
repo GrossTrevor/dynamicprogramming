@@ -63,7 +63,7 @@ $\text{Case 1}  - A[i] == B[j]$:
 
 $\text{Value}[A[i]] + \text{OPT}(i-1,j-1)$
 
-$\text{Case 2} - A[i] != B[j]:$
+$\text{Case 2} - A[i] \ne B[j]:$
 
 $\max(OPT(i-1,j), \text{OPT}(i,j-1))$
 
@@ -74,7 +74,7 @@ $\text{OPT}(i, 0) = 0, \text{OPT}(0,j) = 0$
 
 Correctness:
 
-This recurrence equation is correct because it considers both cases optimally, if $A[i] == B[j]$ and these values are not appended to the optimal solution, we could append this matched character, and with the assumption that $\text{Value}[A[i]] > 0$, this would only increase the sum of the substring, contradicting the optimal solution. If $A[i] != B[j]$, then we do not use at least one of these characters, meaning the best we can do is either $\text{OPT}(i,j-1)$ or $\text{OPT}(i-1,j)$, and our recurrence equation takes the one with a larger value, assuring the best possible outcome.
+This recurrence equation is correct because it considers both cases optimally, if $A[i] == B[j]$ and these values are not appended to the optimal solution, we could append this matched character, and with the assumption that $\text{Value}[A[i]] > 0$, this would only increase the sum of the substring, contradicting the optimal solution. If $A[i] \ne B[j]$, then we do not use at least one of these characters, meaning the best we can do is either $\text{OPT}(i,j-1)$ or $\text{OPT}(i-1,j)$, and our recurrence equation takes the one with a larger value, assuring the best possible outcome.
 
 
 
