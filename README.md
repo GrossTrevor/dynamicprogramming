@@ -100,4 +100,4 @@ function HVLCS_length(A, B)
     return M[m][n]
 ```
 
-The runtime of `HVLCS_length' is $O(mn)$.
+The runtime of `HVLCS_length` is $O(mn)$.
